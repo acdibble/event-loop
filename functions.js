@@ -4,8 +4,8 @@ const { promisify } = require('util');
 const pbkdf2Async = promisify(pbkdf2);
 
 /**
- * this takes around 4-6 seconds to execute on my MPB and it blocks anything
- * other things from happening in the event loop
+ * this takes around 4-6 seconds to execute on my MPB and it blocks any other
+ * things from happening in the event loop
  */
 const blocking = () => {
   pbkdf2Sync('test', 'test', 10000, 10000, 'sha1');
